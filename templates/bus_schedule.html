@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Schedule and Travel Time</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="wrapper">
+        <form action="/" method="post">
+            <h1><i class='bx bx-map-alt'></i></h1>
+            <h2>Bus Schedule and Travel Time</h2>
+            
+            <div class="input-box">
+                <input type="text" placeholder="Enter day of departure" required name="day">
+            </div>
+            
+            <div class="input-box">
+                <input type="text" placeholder="Enter time of departure" required name="time">
+            </div>
+            <div class="input-box">
+                <input type="text" placeholder="Departure point" required name="dp">
+            </div>
+            <div class="input-box">
+                <input type="text" placeholder="Arrival destination" required name="ad">
+            </div>
+            
+            <button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Calculate
+            </button>
+        </form>
+    </div>
+
+    
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">ROUTE</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body"><i class='bx bx-bus' ></i>
+                   
+                    <ul>
+                    <li>The next available bus is {{bus_coming}} <i class='bx bx-bus' ></i></li>
+                    <li>The Estimated travel time and Distance to destination is {{travel_time}} </li>
+                    <li>The next bus {{bus_coming}} from {{bank}} is scheduled to depart at: {{message}}</li>
+                    <li>You are expected to reach your destination at {{expected_arrival_time}} <i class='bx bxs-map-pin'></i></li> </ul>
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
